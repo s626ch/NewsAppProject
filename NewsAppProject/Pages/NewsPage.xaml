@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="NewsAppProject.Pages.NewsPage">
+             x:Class="NewsAppProject.Pages.NewsPage"
+             NavigationPage.HasNavigationBar="False">
     <Grid RowDefinitions="Auto, Auto, *">
         <Label Grid.Row="0" Text="News 24" FontSize="Title" VerticalOptions="Center" HorizontalOptions="Center"/>
         <CollectionView Grid.Row="1" x:Name="CvCategories" HeightRequest="60" SelectionMode="Single" SelectionChanged="CvCategories_SelectionChanged">
@@ -16,15 +17,15 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <CollectionView Grid.Row="2" x:Name="CvNews">
+        <CollectionView Grid.Row="2" x:Name="CvNews" SelectionMode="Single" SelectionChanged="CvNews_SelectionChanged" HorizontalOptions="Center">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Vertical" ItemSpacing="15"/>
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="10">
-                        <Image HeightRequest="200" Source="{Binding Image}"/>
-                        <Label FontSize="Medium" Text="{Binding Title}"/>
+                        <Image HeightRequest="200" Source="{Binding Image}" Aspect="AspectFill" HorizontalOptions="Center"/>
+                        <Label FontSize="Medium" Text="{Binding Title}" HorizontalOptions="Center"/>
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

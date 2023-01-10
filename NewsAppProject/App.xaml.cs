@@ -6,6 +6,6 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new Pages.NewsPage();
+		MainPage = new NavigationPage(new Pages.NewsPage());
 	}
 }
