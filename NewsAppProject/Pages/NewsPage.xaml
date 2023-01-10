@@ -23,8 +23,8 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="10">
-                        <Image HeightRequest="200"/>
-                        <Label FontSize="Medium"/>
+                        <Image HeightRequest="200" Source="{Binding Image}"/>
+                        <Label FontSize="Medium" Text="{Binding Title}"/>
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
