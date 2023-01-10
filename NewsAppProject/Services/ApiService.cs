@@ -10,10 +10,10 @@ namespace NewsAppProject.Services
 {
     public class ApiService
     {
-        public async Task<Root> GetNews()
+        public async Task<Root> GetNews(string categoryName)
         {
             var httpClient = new HttpClient();
-            var response = await httpClient.GetStringAsync("https://gnews.io/api/v4/top-headlines?token=2b40790cc1b98b86d142162d2c58019e&topic=breaking-news&lang=en");
+            var response = await httpClient.GetStringAsync("https://gnews.io/api/v4/top-headlines?token=2b40790cc1b98b86d142162d2c58019e&lang=en&topic="+categoryName.ToLower());
             // deserialization
             return JsonConvert.DeserializeObject<Root>(response);
         }

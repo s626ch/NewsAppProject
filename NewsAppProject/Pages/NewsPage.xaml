@@ -4,14 +4,14 @@
              x:Class="NewsAppProject.Pages.NewsPage">
     <Grid RowDefinitions="Auto, Auto, *">
         <Label Grid.Row="0" Text="News 24" FontSize="Title" VerticalOptions="Center" HorizontalOptions="Center"/>
-        <CollectionView Grid.Row="1" x:Name="CvCategories" HeightRequest="60">
+        <CollectionView Grid.Row="1" x:Name="CvCategories" HeightRequest="60" SelectionMode="Single" SelectionChanged="CvCategories_SelectionChanged">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal" ItemSpacing="5"/>
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="10">
-                        <Label FontSize="Medium"/>
+                        <Label FontSize="Medium" Text="{Binding Name}"/>
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
